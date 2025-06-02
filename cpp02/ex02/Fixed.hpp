@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:06:02 by a                 #+#    #+#             */
-/*   Updated: 2025/05/05 20:41:39 by a                ###   ########.fr       */
+/*   Updated: 2025/06/02 17:38:33 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
+/*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:06:05 by a                 #+#    #+#             */
-/*   Updated: 2025/05/14 19:20:07 by a                ###   ########.fr       */
+/*   Updated: 2025/06/02 19:36:53 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this-> _value_fixed = rhs.getRawBits();
-	return (*this); // return a reference
+	return (*this);
 }
 
 std::ostream &operator<<(std::ostream &out, Fixed const &rhs)
