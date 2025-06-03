@@ -6,12 +6,12 @@
 /*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 20:52:55 by a                 #+#    #+#             */
-/*   Updated: 2025/06/03 03:52:49 by a                ###   ########.fr       */
+/*   Updated: 2025/06/03 03:53:35 by a                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
@@ -19,6 +19,8 @@ int	main(void)
 	ClapTrap ClapB("ClapB");
 	ClapTrap ClapC("ClapC");
 	ClapTrap ClapD("ClapD");
+	ScavTrap ScavA("ScavA");
+	ScavTrap ScavB("ScavB");
 
 	ClapA.setAttackDamage(10);
 	ClapA.attack("ClapC");
@@ -32,4 +34,8 @@ int	main(void)
 			ClapB.takeDamage(2);
 		ClapB.beRepaired(1);
 	}
+	ScavA.attack("ScavB");
+	if (ScavA.getHitPoints() > 0 && ScavA.getEnergyPoints() > 0)
+		ScavB.takeDamage(ScavA.getAttackDamage());
+	ScavA.guardGate();
 }
