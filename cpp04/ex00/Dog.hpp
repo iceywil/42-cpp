@@ -3,24 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
+/*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 20:53:29 by a                 #+#    #+#             */
-/*   Updated: 2025/06/03 17:36:08 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/06/04 20:34:26 by a                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DOG_HPP
+#define DOG_HPP
+
 #include <string>
+#include "Animal.hpp"
 
-class Dog
+class Dog : public Animal
 {
-	protected:
-		std::string type;
-	public:
-		Dog();
-		Dog(std::string type);
-		Dog(Dog const &src);
-		~Dog();
-		Dog	&operator=(Dog const &rhs);
+  public:
+	Dog();
+	Dog(Dog const &src);
+	~Dog();
+	Dog &operator=(Dog const &rhs);
 
-}
+	void makeSound() const;
+};
+
+#endif

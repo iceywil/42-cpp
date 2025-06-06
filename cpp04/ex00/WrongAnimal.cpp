@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 20:53:29 by a                 #+#    #+#             */
-/*   Updated: 2025/06/04 17:02:51 by a                ###   ########.fr       */
+/*   Updated: 2025/06/04 20:28:44 by a                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include <string>
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Animal: Default constructor called." << std::endl;
+	std::cout << "WrongAnimal: Default constructor called." << std::endl;
 }
 
-Animal::Animal(Animal const &src)
+WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
-	std::cout << "Animal: Copy constructor called." << std::endl;
+	std::cout << "WrongAnimal: Copy constructor called." << std::endl;
 	*this = src;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal: Destructor called." << std::endl;
+	std::cout << "WrongAnimal: Destructor called." << std::endl;
 }
 
-Animal &Animal::operator=(Animal const &rhs)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
 {
-	std::cout << "Animal Assignation operator called" << std::endl;
+	std::cout << "WrongAnimal Assignation operator called" << std::endl;
 	if (this == &rhs)
 		return *this;
 
@@ -39,10 +39,10 @@ Animal &Animal::operator=(Animal const &rhs)
 	return *this;
 }
 
-std::string Animal::getType() const{
+std::string WrongAnimal::getType() const{
     return this->_type;
 }
 
-void    Animal::makeSound() const{
-    std::cout << "No animal type, no sound." << std::endl;
+void    WrongAnimal::makeSound() const{
+    std::cout << "No WrongAnimal type, no sound." << std::endl;
 }

@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 20:53:29 by a                 #+#    #+#             */
-/*   Updated: 2025/06/04 20:34:26 by a                ###   ########.fr       */
+/*   Created: 2025/06/05 18:02:01 by a                 #+#    #+#             */
+/*   Updated: 2025/06/05 18:02:19 by a                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
 #include <string>
-#include "Animal.hpp"
 
-class Cat : public Animal
+class ICharacter
 {
   public:
-	Cat();
-	Cat(Cat const &src);
-	~Cat();
-	Cat &operator=(Cat const &rhs);
-
-	void makeSound() const;
+	virtual ~ICharacter()
+	{
+	}
+	virtual std::string const &getName() const = 0;
+	virtual void equip(AMateria *m) = 0;
+	virtual void unequip(int idx) = 0;
+	virtual void use(int idx, ICharacter &target) = 0;
 };
-
-#endif

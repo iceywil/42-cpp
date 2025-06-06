@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 20:53:29 by a                 #+#    #+#             */
-/*   Updated: 2025/06/04 20:34:26 by a                ###   ########.fr       */
+/*   Updated: 2025/06/05 17:36:23 by a                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include <string>
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat : public Animal
+class Animal
 {
-  public:
-	Cat();
-	Cat(Cat const &src);
-	~Cat();
-	Cat &operator=(Cat const &rhs);
+  protected:
+	std::string _type;
 
-	void makeSound() const;
+  public:
+	Animal();
+	Animal(Animal const &src);
+	virtual ~Animal();
+	Animal &operator=(Animal const &rhs);
+
+	std::string getType() const;
+	virtual void makeSound() const = 0; // Pure virtual - makes Animal abstract
 };
 
 #endif

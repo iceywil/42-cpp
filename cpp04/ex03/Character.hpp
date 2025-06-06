@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: a <a@student.42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 20:53:29 by a                 #+#    #+#             */
-/*   Updated: 2025/06/04 20:34:26 by a                ###   ########.fr       */
+/*   Created: 2025/06/05 18:04:59 by a                 #+#    #+#             */
+/*   Updated: 2025/06/05 18:07:58 by a                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
 #include <string>
-#include "Animal.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal
-{
-  public:
-	Cat();
-	Cat(Cat const &src);
-	~Cat();
-	Cat &operator=(Cat const &rhs);
+class Character{
+	private:
+		AMateria Materias[4];
 
-	void makeSound() const;
+	
 };
-
-#endif
