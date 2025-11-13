@@ -6,7 +6,7 @@
 #    By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 18:17:33 by wscherre          #+#    #+#              #
-#    Updated: 2025/11/12 10:32:50 by wscherre         ###   ########.fr        #
+#    Updated: 2025/11/13 19:48:44 by wscherre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 NAME = a.out
 
-SRCS = main.cpp ScalarConverter.cpp 
+SRCS = main.cpp Base.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
