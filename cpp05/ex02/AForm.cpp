@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:10:26 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 17:15:07 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:05:12 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 AForm::AForm() : _name("Default"), _isSigned(false), _signingGrade(0),
 	_executingGrade(0)
 {
-	std::cout << "AForm Default constructor called" << std::endl;
 }
 
 AForm::AForm(std::string const name, int const signingGrade,
@@ -31,24 +30,20 @@ AForm::AForm(std::string const name, int const signingGrade,
 	{
 		throw(AForm::GradeTooLowException());
 	}
-	std::cout << "AForm Constructor called" << std::endl;
 }
 
-AForm::AForm(AForm const &src) : _name(src._name), _isSigned(false),
+AForm::AForm(AForm const &src) : _name(src._name),
 	_signingGrade(src._signingGrade), _executingGrade(src._executingGrade)
 {
-	*this = src;
-	std::cout << "AForm Copy Constructor called" << std::endl;
+	this->_isSigned = src._isSigned;
 }
 
 AForm::~AForm()
 {
-	std::cout << "AForm " << this->_name << " destructor called" << std::endl;
 }
 
 AForm &AForm::operator=(AForm const &rhs)
 {
-	std::cout << "AForm assignation operator overload called." << std::endl;
 	if (this != &rhs)
 		this->_isSigned = rhs._isSigned;
 	return (*this);

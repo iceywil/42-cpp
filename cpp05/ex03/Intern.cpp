@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 19:12:47 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 20:43:05 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:08:22 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ AForm *Intern::makeForm(std::string formName, std::string formTarget)
 		form = new PresidentialPardonForm(formTarget);
 		break;
 	default:
-		std::cout << "Intern can't create '" << formName << "' because it is not a known form type." << std::endl;
 		throw Intern::FormDoesntExistException();
 	}
 

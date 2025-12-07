@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:51:06 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 21:00:01 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:08:23 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@
 #include "ShrubberyCreationForm.hpp"
 #include <limits>
 #include <sstream>
+#include <cstdlib>
+#include <ctime>
 
 int	main(void)
 {
+	std::srand(std::time(0));
 	try
 	{
 		Intern intern;

@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:36:43 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 19:07:21 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:43:04 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm& operator=(RobotomyRequestForm const &rhs);
 		~RobotomyRequestForm();
 
-		void execute(Bureaucrat const &bureaucrat);
+		void execute(Bureaucrat const &bureaucrat) const;
 };
 
 #endif

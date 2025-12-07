@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:51:06 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 19:19:24 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:05:12 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,21 @@
 #include "PresidentialPardonForm.hpp"
 #include <limits>
 #include <sstream>
+#include <cstdlib>
 
 int	main(void)
 {
+	srand(time(0));
 	try
 	{
-		std::cout << "Bureaucrats creation =====" << std::endl << std::endl;
+		std::cout << "===== Bureaucrats creation =====" << std::endl << std::endl;
 		Bureaucrat will("Will", 50);
 		Bureaucrat tom("Tom", 5);
 		Bureaucrat yay("Yay", 142);
 		std::cout << will << std::endl;
 		std::cout << tom << std::endl;
 		std::cout << yay << std::endl;
-		std::cout << "Forms creation =====" << std::endl << std::endl;
+		std::cout << "===== Forms creation =====" << std::endl << std::endl;
 		ShrubberyCreationForm shrubForm("ShrubForm");
 		RobotomyRequestForm roboForm("RobForm");
 		PresidentialPardonForm pardonForm("PresForm");
@@ -38,7 +40,7 @@ int	main(void)
 		std::cout << roboForm << std::endl;
 		std::cout << pardonForm << std::endl;
 		std::cout << yayPresForm << std::endl;
-		std::cout << "Signature Test =====" << std::endl << std::endl;
+		std::cout << "===== Signature Test =====" << std::endl << std::endl;
 		will.signForm(shrubForm);
 		std::cout << shrubForm << std::endl;
 		tom.signForm(pardonForm);
@@ -47,16 +49,11 @@ int	main(void)
 		std::cout << roboForm << std::endl;
 		yay.signForm(yayPresForm);
 		std::cout << yayPresForm << std::endl;
-		// try {
-		//     tom.signForm(roboForm);
-		// } catch (const std::exception &e) {
-		//     std::cerr << "Error in Robotomy test : " << e.what() << std::endl;
-		// }
-		std::cout << "Execution test =====" << std::endl << std::endl;
+		std::cout << "===== Execution test =====" << std::endl << std::endl;
 		will.executeForm(shrubForm);
 		tom.executeForm(pardonForm);
 		yay.executeForm(shrubForm);
-		std::cout << "Robotomy test =====" << std::endl << std::endl;
+		std::cout << "===== Robotomy test =====" << std::endl << std::endl;
 		tom.executeForm(roboForm);
 	}
 	catch (std::exception &e)

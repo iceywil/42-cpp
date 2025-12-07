@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:36:46 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 18:52:59 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:10:03 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,14 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat)
+void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 {
 	if (!getIsSigned())
 		throw FormIsNotSigned();
 
-	if (bureaucrat.getGrade() < this->getExecutingGrade())
+	if (bureaucrat.getGrade() > this->getExecutingGrade())
 		throw GradeTooLowException();
 		
-	std::cout << _target << "has been pardoned by Zaphod Beeblebrox." << std::endl;
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
 

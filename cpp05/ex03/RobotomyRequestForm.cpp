@@ -6,14 +6,14 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:36:46 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 20:18:17 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:14:25 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <cstdlib>
-#include <iostream>
 #include <ctime>
+#include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm()
 {
@@ -34,10 +34,10 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
+	std::cout << "RobotomyRequestForm operator called" << std::endl;
 	if (this != &rhs)
 		_target = rhs._target;
 	return (*this);
-	std::cout << "RobotomyRequestForm operator called" << std::endl;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
@@ -45,16 +45,16 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat)
+void RobotomyRequestForm::execute(Bureaucrat const &bureaucrat) const
 {
 	if (!getIsSigned())
 		throw FormIsNotSigned();
 
-	if (bureaucrat.getGrade() < this->getExecutingGrade())
+	if (bureaucrat.getGrade() > this->getExecutingGrade())
 		throw GradeTooLowException();
 
 	std::cout << "BRRRRRRRRRRRRRRRRRRRRRR!!!!!!!!!" << std::endl;
-	
+
 	std::srand(std::time(0));
 	if (std::rand() % 2 == 0)
 		std::cout << _target << " robotomized succesfully!" << std::endl;

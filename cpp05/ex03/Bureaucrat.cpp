@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:58:58 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 20:17:56 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:08:22 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,8 @@ void Bureaucrat::executeForm(AForm const &form)
 {
 	if (!form.getIsSigned())
 		throw AForm::FormIsNotSigned();
-	if(!(form.getExecutingGrade() > this->getGrade()))
+	if(form.getExecutingGrade() < this->getGrade())
 		throw AForm::GradeTooLowException();
 	std::cout << this->_name << " executed form :" << form.getName() << std::endl;
+	form.execute(*this);
 };

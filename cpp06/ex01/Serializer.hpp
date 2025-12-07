@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:40:37 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/13 19:20:02 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:36:56 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct Data
 {
 	std::string name;
 	int		age;
-	Data	*next;
 }			Data;
 
 class Serializer

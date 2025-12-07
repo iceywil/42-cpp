@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:36:46 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 19:11:32 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:05:12 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,16 @@
 
 PresidentialPardonForm::PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm Default Constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const target) : AForm(target,
 	25, 5), _target(target)
 {
-	std::cout << "PresidentialPardonForm Constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src) : AForm(src),
 	_target(src._target)
 {
-	std::cout << "PresidentialPardonForm Copy Constructor called" << std::endl;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
@@ -34,22 +31,17 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
 	if (this != &rhs)
 		_target = rhs._target;
 	return (*this);
-	std::cout << "PresidentialPardonForm operator called" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat)
+void PresidentialPardonForm::execute(Bureaucrat const &bureaucrat) const
 {
-	if (!getIsSigned())
-		throw FormIsNotSigned();
-
-	if (bureaucrat.getGrade() < this->getExecutingGrade())
-		throw GradeTooLowException();
-		
-	std::cout << _target << "has been pardoned by Zaphod Beeblebrox." << std::endl;
+	if (this->getIsSigned() == false)
+		throw(AForm::FormIsNotSigned());
+	else if (bureaucrat.getGrade() > this->getExecutingGrade())
+		throw(AForm::GradeTooLowException());
+	std::cout << this->getName() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }
-

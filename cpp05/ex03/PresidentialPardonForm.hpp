@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:36:43 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 19:07:18 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:09:57 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm& operator=(PresidentialPardonForm const &rhs);
 		~PresidentialPardonForm();
 
-		void execute(Bureaucrat const &bureaucrat);
+		void execute(Bureaucrat const &bureaucrat) const;
 };
 
 #endif

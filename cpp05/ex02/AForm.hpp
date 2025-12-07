@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 16:10:19 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 19:07:20 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:53:23 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ class AForm
 				virtual const char *what() const throw();
 		};
 
-		virtual void execute(Bureaucrat const &bureaucrat) = 0;
+		virtual void execute(Bureaucrat const &bureaucrat) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &o, AForm &form);

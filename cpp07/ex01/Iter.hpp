@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 16:51:06 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/29 17:39:21 by wscherre         ###   ########.fr       */
+/*   Created: 2025/12/07 18:24:37 by wscherre          #+#    #+#             */
+/*   Updated: 2025/12/07 18:24:42 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#pragma once
 
-int main(){
-    Bureaucrat will("Will", 130);
-    Bureaucrat tom("Tom", 5);
-    Form form("Contract", 129, 50);
+template<typename T>
+void	iter(T* array, int length, void (*func)(T  &)){
+	for (int i = 0; i < length; i++)
+		func(array[i]);
+}
 
-    std::cout << will;
-    std::cout << tom;
-    std::cout << form;
-
-    will.signForm(form);
-    std::cout << form;
-
-    tom.signForm(form);
-    std::cout << form;
+template<typename T>
+void	iter(const T* array, int length, void (*func)(const T &)){
+	for (int i = 0; i < length; i++)
+		func(array[i]);
 }

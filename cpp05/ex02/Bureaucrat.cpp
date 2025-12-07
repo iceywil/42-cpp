@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 16:58:58 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/11 19:10:58 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/11/29 18:05:12 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 {
-	std::cout << "Bureaucrat default constructor created." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
@@ -24,18 +23,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 		throw Bureaucrat::GradeTooLowException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooHighException();
-	std::cout << "Bureaucrat created." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name(src._name),
 	_grade(src._grade)
 {
-	std::cout << "Bureaucrat copy constructor called." << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Bureaucrat " << this->_name << " destroyed." << std::endl;
 }
 
 std::string Bureaucrat::getName() const
@@ -102,9 +98,13 @@ void Bureaucrat::signForm(AForm &form)
 
 void Bureaucrat::executeForm(AForm const &form)
 {
-	if (!form.getIsSigned())
-		throw AForm::FormIsNotSigned();
-	if(!(form.getExecutingGrade() > this->getGrade()))
-		throw AForm::GradeTooLowException();
-	std::cout << this->_name << " executed form :" << form.getName() << std::endl;
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_name << " couldn't execute " << form.getName() << " because: " << e.what() << '\n';
+	}
 };

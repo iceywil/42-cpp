@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:32:40 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/13 21:19:54 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:40:12 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 int main(void)
 {
+	std::srand(std::time(NULL));
 	for (int i = 0; i < 10; i++)
 	{
-		std::srand(std::time(NULL) + std::clock());
-
 		Base *object = generate();
 		identify(object);
 

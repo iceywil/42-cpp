@@ -6,7 +6,7 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:32:26 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/12 13:52:48 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:30:27 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &rhs)
 {
 	(void)rhs;
 	return (*this);
+}
+
+ScalarConverter::~ScalarConverter()
+{
 }
 
 bool ScalarConverter::isInteger(const std::string &literal)
@@ -165,7 +169,6 @@ STOPPING EXECUTION HERE "
 	}
 	else
 	{
-		// std::cout << "char: impossible\n";
 		std::cout << "char: '" << to_Char << "'\n";
 	}
 

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 16:51:06 by wscherre          #+#    #+#             */
-/*   Updated: 2025/11/29 17:39:21 by wscherre         ###   ########.fr       */
+/*   Created: 2025/12/07 18:23:42 by wscherre          #+#    #+#             */
+/*   Updated: 2025/12/07 18:23:56 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#pragma once
 
-int main(){
-    Bureaucrat will("Will", 130);
-    Bureaucrat tom("Tom", 5);
-    Form form("Contract", 129, 50);
+template<typename T>
+void swap(T &a, T &b){
+	T tmp = a;
+	a = b;
+	b = tmp;
+}
 
-    std::cout << will;
-    std::cout << tom;
-    std::cout << form;
+template<typename T>
+T const& min(T const& a, T const& b){
+	return (a < b ? a : b);
+}
 
-    will.signForm(form);
-    std::cout << form;
-
-    tom.signForm(form);
-    std::cout << form;
+template<typename T>
+T const& max(T const& a, T const& b){
+	return (a > b ? a : b);
 }
