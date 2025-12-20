@@ -6,7 +6,7 @@
 #    By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 18:17:33 by wscherre          #+#    #+#              #
-#    Updated: 2025/12/18 12:44:29 by wscherre         ###   ########.fr        #
+#    Updated: 2025/12/20 16:17:49 by wscherre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
-NAME = a.out
+NAME = btc
 
-SRCS = main.cpp
+SRCS = main.cpp BictoinExchange.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

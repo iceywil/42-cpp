@@ -6,7 +6,7 @@
 #    By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 18:17:33 by wscherre          #+#    #+#              #
-#    Updated: 2025/12/07 18:24:48 by wscherre         ###   ########.fr        #
+#    Updated: 2025/12/19 15:47:45 by wscherre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 NAME = a.out
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

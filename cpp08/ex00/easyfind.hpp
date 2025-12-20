@@ -6,28 +6,29 @@
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 18:29:05 by wscherre          #+#    #+#             */
-/*   Updated: 2025/12/07 18:29:07 by wscherre         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:43:04 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <stdexcept>
 #include <algorithm>
+#include <stdexcept>
 
-
-class ValueNotFoundException : public std::exception{
-    public:
-        virtual const char *what() const throw(){
-            return ("Value not found!");
-        }
-        
+class ValueNotFoundException : public std::exception
+{
+  public:
+	virtual const char *what() const throw()
+	{
+		return ("Value not found!");
+	}
 };
 
-template <typename T>
-typename T::iterator easyfind(T& container, int value){
-    typename T::iterator it = std::find(container.begin(), container.end(), value);
-    if (it == container.end())
-        throw ValueNotFoundException();
-    return it;
+template <typename T> typename T::iterator easyfind(T &container, int value)
+{
+	typename T::iterator it = std::find(container.begin(), container.end(),
+			value);
+	if (it == container.end())
+		throw ValueNotFoundException();
+	return (it);
 }

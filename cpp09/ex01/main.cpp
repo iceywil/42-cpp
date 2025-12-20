@@ -5,27 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 18:09:39 by wscherre          #+#    #+#             */
-/*   Updated: 2025/12/18 12:44:26 by wscherre         ###   ########.fr       */
+/*   Created: 2025/12/20 16:02:25 by wscherre          #+#    #+#             */
+/*   Updated: 2025/12/20 16:25:04 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Whatever.hpp"
+#include "RPN.hpp"
 
-int main( void ) {
-	int a = 2;
-	int b = 3;
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	return 0;
+int	main(int argc, char **argv)
+{
+	if (argc != 2)
+	{
+		std::cerr << "Error" << std::endl;
+		return (1);
+	}
+	RPN::evaluate(argv[1]);
+	return (0);
 }

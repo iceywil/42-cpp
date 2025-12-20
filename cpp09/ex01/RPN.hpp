@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Whatever.hpp                                       :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wscherre <wscherre@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 18:23:42 by wscherre          #+#    #+#             */
-/*   Updated: 2025/12/18 12:44:33 by wscherre         ###   ########.fr       */
+/*   Created: 2025/12/20 16:02:16 by wscherre          #+#    #+#             */
+/*   Updated: 2025/12/20 16:02:18 by wscherre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef RPN_HPP
+# define RPN_HPP
 
-template<typename T>
-void swap(T &a, T &b){
-	T tmp = a;
-	a = b;
-	b = tmp;
-}
+# include <iostream>
+# include <string>
+# include <stack>
+# include <sstream>
+# include <exception>
 
-template<typename T>
-T const& min(T const& a, T const& b){
-	return (a < b ? a : b);
-}
+class RPN {
+    private:
+        RPN();
+        RPN(const RPN& src);
+        RPN& operator=(const RPN& rhs);
+        ~RPN();
 
-template<typename T>
-T const& max(T const& a, T const& b){
-	return (a > b ? a : b);
-}
+    public:
+        static void evaluate(const std::string& expression);
+};
+
+#endif
